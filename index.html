@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-space-shuttle"></i> Cosmic Explorer</h1>
+            <nav>
+                <a href="#apod" data-section="apod" class="nav-link active"><i class="fas fa-star"></i> APOD</a>
+                <a href="#mars-rovers" data-section="mars-rovers" class="nav-link"><i class="fas fa-robot"></i> Mars Rovers</a>
+                <a href="#epic" data-section="epic" class="nav-link"><i class="fas fa-globe-americas"></i> Earth View</a>
+                <a href="#nasa-library" data-section="nasa-library" class="nav-link"><i class="fas fa-images"></i> NASA Library</a>
+                <a href="#neo" data-section="neo" class="nav-link"><i class="fas fa-meteor"></i> NEO Tracker</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="global-loader" class="loader-container">
+            <div class="loader"></div>
+            <p>Loading data from the cosmos...</p>
+        </div>
+
+        <section id="apod" class="feature-section active glass-effect">
+            <h2>Astronomy Picture of the Day</h2>
+            <div class="controls glass-effect">
+                <label for="apod-date">Select Date:</label>
+                <input type="date" id="apod-date" max="" class="glass-input">
+                <button id="get-apod-btn" class="glass-button"><i class="fas fa-sync-alt"></i> Get APOD</button>
+            </div>
+            <div class="content-display" id="apod-content">
+                </div>
+        </section>
+
+        <section id="mars-rovers" class="feature-section glass-effect">
+            <h2>Mars Rover Photos</h2>
+            <div class="controls glass-effect">
+                <label for="rover-select">Rover:</label>
+                <select id="rover-select" class="glass-input">
+                    <option value="curiosity">Curiosity</option>
+                    <option value="opportunity">Opportunity</option>
+                    <option value="spirit">Spirit</option>
+                </select>
+                <label for="sol-input">Martian Sol (Day):</label>
+                <input type="number" id="sol-input" value="1000" min="1" class="glass-input">
+                <label for="camera-select">Camera:</label>
+                <select id="camera-select" class="glass-input">
+                    </select>
+                <button id="get-rover-photos-btn" class="glass-button"><i class="fas fa-camera"></i> Get Photos</button>
+            </div>
+            <div class="content-display photo-grid" id="mars-photos-gallery">
+                </div>
+            <div id="mars-rover-info" class="info-text"></div>
+        </section>
+
+        <section id="epic" class="feature-section glass-effect">
+            <h2>Earth View from EPIC</h2>
+            <div class="controls glass-effect">
+                <label for="epic-date">Select Date:</label>
+                <input type="date" id="epic-date" max="" class="glass-input">
+                <button id="get-epic-btn" class="glass-button"><i class="fas fa-satellite"></i> Get Earth View</button>
+            </div>
+            <div class="content-display" id="epic-content">
+                </div>
+        </section>
+
+        <section id="nasa-library" class="feature-section glass-effect">
+            <h2>NASA Image & Video Library</h2>
+            <div class="controls search-controls glass-effect">
+                <input type="text" id="library-search-input" placeholder="Search for space images or videos..." class="glass-input">
+                <button id="search-library-btn" class="glass-button"><i class="fas fa-search"></i> Search</button>
+            </div>
+            <div class="content-display photo-grid" id="library-results">
+                </div>
+        </section>
+
+        <section id="neo" class="feature-section glass-effect">
+            <h2>Near Earth Object (NEO) Tracker</h2>
+            <div class="controls glass-effect">
+                <label for="neo-start-date">Start Date:</label>
+                <input type="date" id="neo-start-date" max="" class="glass-input">
+                <label for="neo-end-date">End Date:</label>
+                <input type="date" id="neo-end-date" max="" class="glass-input">
+                <button id="get-neo-btn" class="glass-button"><i class="fas fa-globe-europe"></i> Track NEOs</button>
+            </div>
+            <div class="content-display" id="neo-list">
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Vishwa Pramuditha | Data provided by NASA.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
